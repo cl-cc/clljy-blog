@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode development",
     "build": "vue-tsc && vite build",
+    "build:prod": "vue-tsc && vite build --mode production",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -13,12 +14,14 @@
     "element-plus": "^2.3.12",
     "less": "^4.2.0",
     "less-loader": "^11.1.3",
+    "prismjs": "^1.29.0",
     "unplugin-auto-import": "^0.16.6",
     "vite-plugin-compression": "^0.5.1",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   },
   "devDependencies": {
+    "@types/node": "^20.5.9",
     "@vitejs/plugin-vue": "^4.3.4",
     "autoprefixer": "^10.4.15",
     "postcss": "^8.4.29",

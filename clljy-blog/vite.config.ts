@@ -4,7 +4,7 @@
  * @Author: 程
  * @Date: 2023-09-07 16:38:32
  * @LastEditors: 程
- * @LastEditTime: 2023-09-07 20:17:08
+ * @LastEditTime: 2023-09-07 20:25:47
  */
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
@@ -32,6 +32,17 @@ export default defineConfig({
       views: '/src/views',
       assets: '/src/assets',
       utils: '/src/utils',
+    },
+  },
+  //网络代理
+  server: {
+    hmr: true,
+    proxy: {
+      '/api': {
+        target: 'http://192.168.5.42:9501/',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api/, ''),
+      },
     },
   },
 });

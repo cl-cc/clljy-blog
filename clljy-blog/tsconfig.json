@@ -28,7 +28,8 @@
       ]
     },
     "types": [
-      "element-plus/global"
+      "element-plus/global",
+      "node",
     ]
   },
   "include": [

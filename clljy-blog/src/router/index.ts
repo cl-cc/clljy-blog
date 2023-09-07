@@ -4,10 +4,10 @@
  * @Author: 程
  * @Date: 2023-09-07 16:47:13
  * @LastEditors: 程
- * @LastEditTime: 2023-09-07 16:51:58
+ * @LastEditTime: 2023-09-07 20:12:51
  */
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '@/views/Home/index.vue';
+import Home from '@/views/common/Middle.vue';
 
 const routes = [
   {
@@ -16,9 +16,14 @@ const routes = [
     component: Home,
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import('@/views/About/index.vue'),
+    path: '/tutorial',
+    name: 'tutorial',
+    component: () => import('@/views/tutorial/index.vue'),
+  },
+  // redirect
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/',
   },
 ];
 const router = createRouter({
